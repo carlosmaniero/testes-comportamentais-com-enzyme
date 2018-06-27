@@ -174,6 +174,17 @@ export default class Slideshow extends React.Component {
                 <Heading textSize="4rem" margin={50}>Resultado:</Heading>
                 <OlaPessoasShallow nomes={['Ada', 'Grace']} />
             </Slide>
+            <Slide>
+                <Heading textSize="4rem" margin={50}>Navegando com <Code>shallow</Code>:</Heading>
+            </Slide>
+            <CodeSlide
+                lang="js"
+                bgColor="black"
+                code={shallowTestExample}
+                ranges={[
+                    { loc: [26, 37] },
+                    { loc: [33, 36] },
+                ]} />
         </Deck>
       );
   }

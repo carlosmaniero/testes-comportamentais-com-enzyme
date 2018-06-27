@@ -23,4 +23,16 @@ describe('OlaPessoas', () => {
         expect(olaLista.at(1).prop('nome'))
             .toBe(grace);
     });
+
+    it('mostra os nomes em negrito', () => {
+        const wrapper = shallow(
+            <OlaPessoas
+                nomes={[ada, grace]} />);
+
+        const olaLista = wrapper.find(Ola);
+
+        expect(olaLista.at(0).dive()
+            .contains(<strong>{ada}</strong>))
+            .toBeTruthy();
+    });
 });

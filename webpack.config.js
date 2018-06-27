@@ -31,6 +31,18 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: [/node_modules/, /\.raw/],
         use: "babel-loader"
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+            'file-loader',
+            {
+                loader: 'image-webpack-loader',
+                options: {
+                    disable: true
+                },
+            },
+        ],
       }
     ]
   },

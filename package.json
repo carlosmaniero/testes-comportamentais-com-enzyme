@@ -4,9 +4,11 @@
   "repository": "git@github.com:carlosmaniero/testes-comportamentais-com-enzyme.git",
   "author": "<carlosmaniero@gmail.com>",
   "license": "MIT",
+  "homepage": "https://carlosmaniero.github.io/testes-comportamentais-com-enzyme/",
   "scripts": {
     "start": "webpack-dev-server --mode=development",
-    "test": "yarn jest"
+    "test": "jest",
+    "build": "webpack-cli --env.production"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "./src/setupTests.js",

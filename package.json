@@ -5,7 +5,12 @@
   "author": "<carlosmaniero@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --mode=development"
+    "start": "webpack-dev-server --mode=development",
+    "test": "yarn jest"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./src/setupTests.js",
+    "modulePathIgnorePatterns": ["./src/.raw/*"]
   },
   "dependencies": {
     "html-webpack-plugin": "^3.2.0",
@@ -22,10 +27,14 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "file-loader": "^1.1.11",
     "image-webpack-loader": "^4.3.1",
+    "jest": "^23.2.0",
+    "prismjs": "^1.15.0",
     "raw-loader": "^0.5.1",
     "spectacle": "^4.3.1",
+    "spectacle-code-slide": "^0.5.2",
     "webpack-shell-plugin": "^0.5.0"
   }
 }

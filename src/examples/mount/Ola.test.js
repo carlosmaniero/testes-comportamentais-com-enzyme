@@ -6,7 +6,7 @@ import { Ola } from './Ola';
 describe('Dizendo Olá', () => {
     it('diz Olá para o nome', () => {
         const wrapper = mount(
-            <Ola name="Mundo" />);
+            <Ola nome="Mundo" />);
         expect(wrapper.text())
             .toBe("Olá, Mundo!");
     });

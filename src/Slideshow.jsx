@@ -2,14 +2,16 @@ import React from 'react';
 import mainBg from '../assets/mainBg.png';
 import createTheme from 'spectacle/lib/themes/default';
 import CodeSlide from 'spectacle-code-slide';
-
 import { Heading } from './deck/Heading';
-
 import { Ola as OlaMount } from './examples/mount/Ola';
 import { Ola as OlaFind } from './examples/find/Ola';
+import { OlaPessoas as OlaPessoasShallow } from './examples/shallow/OlaPessoas';
+
 import mountTestExample from 'raw-loader!./.raw/examples/mount/Ola.test.js';
 import mountExample from 'raw-loader!./.raw/examples/mount/Ola.js';
 import findTestExample from 'raw-loader!./.raw/examples/find/Ola.test.js';
+import shallowTestExample from 'raw-loader!./.raw/examples/shallow/OlaPessoas.test.jsx';
+import shallowExample from 'raw-loader!./.raw/examples/shallow/OlaPessoas.jsx';
 
 import {
     Appear,
@@ -18,6 +20,7 @@ import {
     CodePane,
     Code,
     Deck,
+    S,
     Fill,
     Fit,
     Image,
@@ -63,9 +66,14 @@ export default class Slideshow extends React.Component {
             <Slide>
                 <Heading textSize="4rem" margin={50}>Primeiro teste</Heading>
                 <Appear>
-                <Text padding={20}>
-                    Conhecendo o <Code>mount()</Code>.
-                </Text>
+                    <Text padding={20}>
+                        Conhecendo o <Code>mount()</Code>.
+                    </Text>
+                </Appear>
+                <Appear>
+                    <Text padding={20}>
+                        Vamos dizer olá!
+                    </Text>
                 </Appear>
             </Slide>
             <CodeSlide
@@ -95,13 +103,18 @@ export default class Slideshow extends React.Component {
                 />
             <Slide>
                 <Heading textSize="4rem" margin={50}>Resultado:</Heading>
-                <OlaMount name="Mundo" />
+                <OlaMount nome="Mundo" />
                 <Appear>
                     <Text>Sim! O código acima é o nosso component :)</Text>
                 </Appear>
             </Slide>
             <Slide>
                 <Heading textSize="4rem" margin={50}>Buscando por elementos</Heading>
+                <Appear>
+                    <Text padding={20}>
+                        Vamos dizer olá em <Code bold={true}>negrito</Code>!
+                    </Text>
+                </Appear>
             </Slide>
             <CodeSlide
                 lang="js"
@@ -115,7 +128,51 @@ export default class Slideshow extends React.Component {
                 ]} />
             <Slide>
                 <Heading textSize="4rem" margin={50}>Resultado:</Heading>
-                <OlaFind name="Mundo" />
+                <OlaFind nome="Mundo" />
+            </Slide>
+            <Slide>
+                <Heading textSize="4rem" margin={50}>Renderizando parcialmente componentes</Heading>
+                <Appear>
+                    <Text padding={20}>
+                        <Code>shallow()</Code>.
+                    </Text>
+                </Appear>
+                <Appear>
+                    <Text padding={20}>
+                        Vamos dizer olá para várias pessoas!
+                    </Text>
+                </Appear>
+            </Slide>
+            <CodeSlide
+                lang="js"
+                bgColor="black"
+                code={shallowTestExample}
+                ranges={[
+                    { loc: [0, 26] },
+                    { loc: [1, 4] },
+                    { loc: [5, 8] },
+                    { loc: [9, 25] },
+                    { loc: [10, 13] },
+                    { loc: [14, 15] },
+                    { loc: [2, 3] },
+                    { loc: [16, 18] },
+                    { loc: [19, 24] },
+                    { loc: [14, 15] },
+                    { loc: [19, 24] },
+                ]} />
+            <Slide>
+                <Heading textSize="4rem" margin={50}>Implementação:</Heading>
+            </Slide>
+            <CodeSlide
+                lang="js"
+                bgColor="black"
+                code={shallowExample}
+                ranges={[
+                    { loc: [3, 11] },
+                ]} />
+            <Slide>
+                <Heading textSize="4rem" margin={50}>Resultado:</Heading>
+                <OlaPessoasShallow nomes={['Ada', 'Grace']} />
             </Slide>
         </Deck>
       );

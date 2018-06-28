@@ -214,9 +214,12 @@ export default class Slideshow extends React.Component {
                 <Heading textSize="4rem" margin={50}>Onde estão os testes de comportamento?</Heading>
                 <Appear>
                     <Text padding={20}>
-                        Adotando pokemons com <Code>pokeapi</Code>
+                        Testando seus componentes da forma que seus usuários usam sua aplicação.
                     </Text>
                 </Appear>
+            </Slide>
+            <Slide>
+                <Heading textSize="4rem" margin={50}>Adotando pokemons com <Code>pokeapi</Code></Heading>
             </Slide>
             <Slide>
                 <Provider store={store}><App /></Provider>

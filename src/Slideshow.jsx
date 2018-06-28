@@ -307,6 +307,9 @@ export default class Slideshow extends React.Component {
                 <Text padding={20}>
                     Linkedin: /carlosmaniero
                 </Text>
+                <Text padding={20}>
+                    https://carlosmaniero.github.io/testes-comportamentais-com-enzyme/
+                </Text>
             </Slide>
         </Deck>
       );

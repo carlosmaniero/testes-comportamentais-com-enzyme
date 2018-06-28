@@ -1,0 +1,3 @@
+[submodule "src/examples/pokemon-adoption"]
+	path = src/examples/pokemon-adoption
+	url = git@github.com:carlosmaniero/pokemon-adoption.git

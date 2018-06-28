@@ -12,7 +12,14 @@
   },
   "jest": {
     "setupTestFrameworkScriptFile": "./src/setupTests.js",
-    "modulePathIgnorePatterns": ["./src/.raw/*"]
+    "modulePathIgnorePatterns": [
+      "./src/.raw/*"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+        "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    }
   },
   "dependencies": {
     "html-webpack-plugin": "^3.2.0",
@@ -24,19 +31,25 @@
     "webpack-dev-server": "^3.1.4"
   },
   "devDependencies": {
+    "axios": "^0.18.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "file-loader": "^1.1.11",
     "image-webpack-loader": "^4.3.1",
     "jest": "^23.2.0",
+    "moxios": "^0.4.0",
     "prismjs": "^1.15.0",
     "raw-loader": "^0.5.1",
+    "react-redux": "^5.0.7",
+    "redux-thunk": "^2.3.0",
     "spectacle": "^4.3.1",
     "spectacle-code-slide": "^0.5.2",
+    "style-loader": "^0.21.0",
     "webpack-shell-plugin": "^0.5.0"
   }
 }

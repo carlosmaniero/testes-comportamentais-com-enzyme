@@ -13,6 +13,13 @@ import findTestExample from 'raw-loader!./.raw/examples/find/Ola.test.js';
 import shallowTestExample from 'raw-loader!./.raw/examples/shallow/OlaPessoas.test.jsx';
 import shallowExample from 'raw-loader!./.raw/examples/shallow/OlaPessoas.jsx';
 
+import App from './examples/pokemon-adoption/App';
+import { configureStore } from './examples/pokemon-adoption/store';
+import { actions } from './examples/pokemon-adoption/species/actions';
+import { Provider } from 'react-redux';
+
+const store = configureStore();
+
 import {
     Appear,
     BlockQuote,
@@ -31,8 +38,6 @@ import {
     Slide,
     Text
 } from 'spectacle';
-
-
 
 const textColor = '#333';
 
@@ -185,6 +190,17 @@ export default class Slideshow extends React.Component {
                     { loc: [26, 37] },
                     { loc: [33, 36] },
                 ]} />
+            <Slide>
+                <Heading textSize="4rem" margin={50}>Onde estão os testes de comportamento?</Heading>
+                <Appear>
+                    <Text padding={20}>
+                        Adotando pokemons com <Code>pokeapi</Code>
+                    </Text>
+                </Appear>
+            </Slide>
+            <Slide>
+                <Provider store={store}><App /></Provider>
+            </Slide>
         </Deck>
       );
   }

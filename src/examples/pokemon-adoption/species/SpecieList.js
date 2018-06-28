@@ -12,10 +12,10 @@ class SpecieListImpl extends React.Component {
 
   render () {
     if (this.props.species.length === 0) {
-      return <div>Loading ...</div>
+      return <div>Carregando ...</div>
     }
     return <div className="specie-list-wrapper">
-      <h1>Choose your Pokémon</h1>
+      <h1>Escolha seu Pokémon</h1>
 
       <ul className="specie-list">
         {this.props.species.map(this.renderPokemon.bind(this))}
@@ -26,7 +26,7 @@ class SpecieListImpl extends React.Component {
   renderPokemon(name) {
     return <li key={name}>
       <h3>{name}</h3>
-      <button className="add-to-cart" onClick={() => this.props.dispatch(cartActions.addToCart(name))}>Add to Cart</button>
+      <button className="add-to-cart" onClick={() => this.props.dispatch(cartActions.addToCart(name))}>Adotar</button>
     </li>;
   }
 }

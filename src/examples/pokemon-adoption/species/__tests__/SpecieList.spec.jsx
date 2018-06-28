@@ -19,15 +19,18 @@ describe('SpecieList', () => {
   beforeEach(() => {
     store = configureStore();
     moxios.install();
-    moxios.stubRequest('https://pokeapi.co/api/v2/pokemon/?limit=200', {
-      status: 200,
-      response: {
-        results: [
-          { name: 'bulbasaur' },
-          { name: 'pikachu' },
-        ]
+    moxios.stubRequest(
+      'https://pokeapi.co/api/v2/pokemon/?limit=200',
+      {
+        status: 200,
+        response: {
+          results: [
+            { name: 'bulbasaur' },
+            { name: 'pikachu' },
+          ]
+        }
       }
-    });
+    );
 
     wrapper = mount(
       <Provider store={store}>
@@ -39,17 +42,21 @@ describe('SpecieList', () => {
     moxios.uninstall();
   });
 
-  describe('fetching specie list', () => {
-    it('shows a loading message until the api returns', () => {
-      expect(wrapper.text()).toContain("Loading");
+  describe('Carregando a lista', () => {
+    it('mostra que está carregando', () => {
+      expect(wrapper.text())
+        .toContain("Carregando");
     });
 
-    it('renders the given list', async () => {
+    it('mostra a lista baixada', async () => {
       await ensureRender(wrapper);
 
-      expect(pokemons().length).toBe(2);
-      expect(pokemonName(0)).toBe('bulbasaur');
-      expect(pokemonName(1)).toBe('pikachu');
+      expect(pokemons().length)
+        .toBe(2);
+      expect(pokemonName(0))
+        .toBe('bulbasaur');
+      expect(pokemonName(1))
+        .toBe('pikachu');
     });
-  })
-})
+  });
+});

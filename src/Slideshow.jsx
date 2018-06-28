@@ -12,6 +12,8 @@ import mountExample from 'raw-loader!./.raw/examples/mount/Ola.js';
 import findTestExample from 'raw-loader!./.raw/examples/find/Ola.test.js';
 import shallowTestExample from 'raw-loader!./.raw/examples/shallow/OlaPessoas.test.jsx';
 import shallowExample from 'raw-loader!./.raw/examples/shallow/OlaPessoas.jsx';
+import specieListTest from 'raw-loader!./.raw/examples/pokemon-adoption/species/__tests__/SpecieList.spec.jsx';
+import specieListIntegrationTest from 'raw-loader!./.raw/examples/pokemon-adoption/species/__tests__/integration/SpecieList.spec.jsx';
 
 import App from './examples/pokemon-adoption/App';
 import { configureStore } from './examples/pokemon-adoption/store';
@@ -63,9 +65,27 @@ export default class Slideshow extends React.Component {
                 <Text textColor="white">Testes Comportamentais Com Enzyme!</Text>
             </Slide>
             <Slide>
+                <Heading textSize="4rem" margin={50}>Carlos Maniero</Heading>
+                <Appear>
+                    <Text padding={20}>
+                        Twitter: @carlosmaniero
+                    </Text>
+                </Appear>
+                <Appear>
+                    <Text padding={20}>
+                        github: /carlosmaniero
+                    </Text>
+                </Appear>
+                <Appear>
+                    <Text padding={20}>
+                        Linkedin: /carlosmaniero
+                    </Text>
+                </Appear>
+            </Slide>
+            <Slide>
                 <Heading textSize="4rem" margin={50}>O que é o Enzyme?</Heading>
                 <Text bgColor="rgba(0,0,0,.3)" textColor="white" padding={20}>
-                    Enzyme é um utilitário que facilita muito a manipulação e asserssão de componentes React.
+                    Enzyme é um utilitário que facilita muito a manipulação e asserção de componentes React.
                 </Text>
             </Slide>
             <Slide>
@@ -200,6 +220,90 @@ export default class Slideshow extends React.Component {
             </Slide>
             <Slide>
                 <Provider store={store}><App /></Provider>
+            </Slide>
+            <Slide>
+                <Heading margin={50}>React + Redux + Enzyme</Heading>
+                <Appear>
+                    <Text textSize="8rem" textColor="red">♥</Text>
+                </Appear>
+            </Slide>
+            <CodeSlide
+                lang="js"
+                bgColor="black"
+                code={specieListTest}
+                ranges={[
+                    { loc: [8, 11] },
+                    { loc: [12, 17] },
+                    { loc: [18, 33] },
+                    { loc: [19, 20] },
+                    { loc: [20, 33] },
+                    { loc: [34, 39] },
+                    { loc: [44, 61] },
+                    { loc: [45, 49] },
+                    { loc: [50, 60] },
+                    { loc: [51, 52] },
+                    { loc: [53, 59] },
+                    { loc: [21, 33] },
+                ]} />
+            <Slide>
+                <Heading margin={50}>Testes de integração entre componentes</Heading>
+            </Slide>
+            <CodeSlide
+                lang="js"
+                bgColor="black"
+                code={specieListIntegrationTest}
+                ranges={[
+                    { loc: [8, 22] },
+                    { loc: [12, 16] },
+                    { loc: [23, 38] },
+                    { loc: [38, 45] },
+                    { loc: [47, 52] },
+                ]} />
+            <Slide>
+                <Heading textSize="4rem" margin={50}>Vantagens de usar esse modelo:</Heading>
+                <Appear>
+                    <Text padding={20}>
+                        Liberdade de refatorar sem ter que mudar nenhum ou quase nenhum teste.
+                    </Text>
+                </Appear>
+                <Appear>
+                    <Text padding={20}>
+                        <Code>stubs / mocks</Code> somente onde realmente necessáŕio (ex: request).
+                    </Text>
+                </Appear>
+                <Appear>
+                    <Text padding={20}>
+                        Testes de <Code>Reducers</Code> são quase sempre testes de <Code>Setters/Getters</Code>.
+                    </Text>
+                </Appear>
+            </Slide>
+            <Slide>
+                <Heading textSize="4rem" margin={50}>Desvantagens:</Heading>
+                <Appear>
+                    <Text padding={20}>
+                        As vezes para fazer um teste passar é necessário muito código.
+                    </Text>
+                </Appear>
+                <Appear>
+                    <Text padding={20}>
+                        Nem sempre quando um teste falha é tão óbvio qual foi o problema.
+                    </Text>
+                </Appear>
+            </Slide>
+            <Slide>
+                <Heading textSize="4rem" margin={50}>Experimente!</Heading>
+            </Slide>
+            <Slide>
+                <Heading textSize="8rem" margin={50}>Obrigado :)</Heading>
+                <Text padding={20}>
+                    Twitter: @carlosmaniero
+                </Text>
+                <Text padding={20}>
+                    github: /carlosmaniero
+                </Text>
+                <Text padding={20}>
+                    Linkedin: /carlosmaniero
+                </Text>
             </Slide>
         </Deck>
       );
